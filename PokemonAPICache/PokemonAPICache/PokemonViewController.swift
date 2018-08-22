@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class PokemonViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
@@ -21,7 +20,6 @@ class PokemonViewController: UIViewController {
     }
     
     @IBAction func fetchButtonTapped(_ sender: Any) {
-
         
         PokemonController.fetchPokemon { (pokemons) in
             DispatchQueue.main.async {
@@ -31,6 +29,11 @@ class PokemonViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func removeCacheTapped(_ sender: Any) {
+        CacheManager.shared.removeCache()
+    }
+    
 }
 
 extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
@@ -47,7 +50,6 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
             DispatchQueue.main.async {
                  cell.pokemonImage.image = image
             }
-           
         }
         return cell
     }

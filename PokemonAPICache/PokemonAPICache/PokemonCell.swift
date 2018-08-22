@@ -11,9 +11,7 @@ import UIKit
 
 class PokemonCell: UITableViewCell {
     
-    
     @IBOutlet var pokemonName: UILabel!
     @IBOutlet var pokemonImage: UIImageView!
-    
     
 }

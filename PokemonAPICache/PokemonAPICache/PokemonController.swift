@@ -35,24 +35,32 @@ class PokemonController {
     
     static func fetchPokemonImage(pokemon: Pokemon, completion: @escaping(UIImage?)-> Void ){
         
-        if let image = CacheManager
+        if let image = CacheManager.shared.cacheImage(pokemon: pokemon) {
+            completion(image)
+            return
+        } else if let image = FileHelper.retrieve(pokemon: pokemon){
+            completion(image)
+             return
+        }
         
         guard let imageURL = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(pokemon.number).png") else { return }
         
         let dataTask = URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
             if let data = data {
-                let image = UIImage(data: data)
+                guard let image = UIImage(data: data) else { return }
+                print("fetching image", pokemon.name)
+                CacheManager.shared.cache(image: image, pokemon: pokemon)
+                FileHelper.store(image: image, pokemon: pokemon)
                 completion(image)
+                return
             }
             if let error = error {
                 print(error)
                 completion(nil)
                 return
             }
-        
+            
         }
         dataTask.resume()
     }
-
-
 }

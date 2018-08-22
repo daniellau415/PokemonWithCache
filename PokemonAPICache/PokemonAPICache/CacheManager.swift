@@ -16,27 +16,22 @@ class CacheManager {
     
     var cache = NSCache<NSString, UIImage>()
     
-    
     func cache(image: UIImage, pokemon: Pokemon) {
+        
         let key = NSString(string: "\(pokemon.number)")
-    
         cache.setObject(image, forKey: key)
     }
     
     func cacheImage(pokemon: Pokemon) -> UIImage? {
         
         let key = NSString(string: "\(pokemon.number)")
-        
         let image = cache.object(forKey: key)
         
         return image
     }
     
-    
     func removeCache() {
         cache.removeAllObjects()
+        FileHelper.deletePokemon()
     }
-    
-    
-    
 }
