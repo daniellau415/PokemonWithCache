@@ -28,7 +28,7 @@ class FileHelper {
     
     //Adds file name
     static func fileURL(pokemon: Pokemon) -> URL {
-        let fileName =  "\(pokemon.name)\(pokemon.number)"
+        let fileName =  "\(pokemon.species.name)\(pokemon.number)"
         let url = pokemonURL.appendingPathComponent(fileName)
         return url
     }

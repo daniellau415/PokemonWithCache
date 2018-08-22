@@ -45,7 +45,7 @@ extension PokemonViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pokemonCell", for: indexPath) as! PokemonCell
         let pokemon = pokemons[indexPath.row]
-        cell.pokemonName.text = pokemon.name
+        cell.pokemonName.text = pokemon.species.name
         PokemonController.fetchPokemonImage(pokemon: pokemon) { (image) in
             DispatchQueue.main.async {
                  cell.pokemonImage.image = image

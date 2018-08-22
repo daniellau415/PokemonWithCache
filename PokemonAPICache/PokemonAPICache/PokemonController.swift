@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class PokemonController {
     
     static func fetchPokemon(completion: @escaping([Pokemon]?) -> Void) {
@@ -48,7 +47,7 @@ class PokemonController {
         let dataTask = URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
             if let data = data {
                 guard let image = UIImage(data: data) else { return }
-                print("fetching image", pokemon.name)
+                print("fetching image", pokemon.species.name)
                 CacheManager.shared.cache(image: image, pokemon: pokemon)
                 FileHelper.store(image: image, pokemon: pokemon)
                 completion(image)
