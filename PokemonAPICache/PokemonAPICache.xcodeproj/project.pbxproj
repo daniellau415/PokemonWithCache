@@ -64,19 +64,59 @@
 		B3C39E5E212C8693000A42A2 /* PokemonAPICache */ = {
 			isa = PBXGroup;
 			children = (
+				B3C39E7D212CF119000A42A2 /* Model */,
+				B3C39E7E212CF130000A42A2 /* Model Controller */,
+				B3C39E80212CF15D000A42A2 /* ViewController and View */,
+				B3C39E7F212CF153000A42A2 /* Managers */,
+				B3C39E81212CF171000A42A2 /* Supporting Files */,
+			);
+			path = PokemonAPICache;
+			sourceTree = "<group>";
+		};
+		B3C39E7D212CF119000A42A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				B3C39E71212C8753000A42A2 /* Pokemon.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B3C39E7E212CF130000A42A2 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
 				B3C39E73212C980A000A42A2 /* PokemonController.swift */,
-				B3C39E75212C9866000A42A2 /* PokemonViewController.swift */,
-				B3C39E77212CA01F000A42A2 /* PokemonCell.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		B3C39E7F212CF153000A42A2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
 				B3C39E79212CCB0A000A42A2 /* CacheManager.swift */,
 				B3C39E7B212CCE71000A42A2 /* FileHelper.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		B3C39E80212CF15D000A42A2 /* ViewController and View */ = {
+			isa = PBXGroup;
+			children = (
+				B3C39E75212C9866000A42A2 /* PokemonViewController.swift */,
+				B3C39E77212CA01F000A42A2 /* PokemonCell.swift */,
+			);
+			path = "ViewController and View";
+			sourceTree = "<group>";
+		};
+		B3C39E81212CF171000A42A2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				B3C39E5F212C8693000A42A2 /* AppDelegate.swift */,
 				B3C39E63212C8693000A42A2 /* Main.storyboard */,
 				B3C39E66212C8695000A42A2 /* Assets.xcassets */,
 				B3C39E68212C8695000A42A2 /* LaunchScreen.storyboard */,
 				B3C39E6B212C8695000A42A2 /* Info.plist */,
 			);
-			path = PokemonAPICache;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,7 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7VSPJ2N6B9;
-				INFOPLIST_FILE = PokemonAPICache/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PokemonAPICache/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,7 +360,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7VSPJ2N6B9;
-				INFOPLIST_FILE = PokemonAPICache/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PokemonAPICache/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
